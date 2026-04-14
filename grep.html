@@ -2,51 +2,45 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Comando GREP</title>
+    <title>Ejemplo comando grep</title>
 </head>
 <body>
+    <h1>Ejemplo de uso del comando grep</h1>
 
-    <!-- TÍTULO -->
-    <h1>Comando GREP</h1>
+    <p>Buscar una palabra en un archivo:</p>
+    <pre>grep "texto" archivo.txt</pre>
 
-    <!-- COMANDO -->
-    <h2>Comando</h2>
-    <p>grep</p>
+    <p>Buscar sin distinguir mayúsculas/minúsculas:</p>
+    <pre>grep -i "texto" archivo.txt</pre>
 
-    <!-- DESCRIPCIÓN / FUNCIÓN -->
-    <h2>Descripción</h2>
-    <p>
-        El comando <strong>grep</strong> se utiliza en sistemas Linux y Unix para buscar texto dentro de archivos. 
-        Permite encontrar líneas que coincidan con un patrón específico, ya sea una palabra, frase o expresión regular.
-    </p>
+    <p>Buscar en varios archivos:</p>
+    <pre>grep "texto" *.txt</pre>
 
-    <!-- SINTAXIS -->
-    <h2>Sintaxis</h2>
-    <pre>
-grep [opciones] patrón [archivo]
-    </pre>
+    <p>Mostrar número de línea:</p>
+    <pre>grep -n "texto" archivo.txt</pre>
 
-    <!-- OPCIONES -->
-    <h2>Opciones</h2>
-    <ul>
-        <li><strong>-i</strong>: Ignora mayúsculas y minúsculas en la búsqueda.</li>
-        <li><strong>-r</strong>: Busca de forma recursiva dentro de directorios.</li>
-        <li><strong>-n</strong>: Muestra el número de línea donde se encuentra la coincidencia.</li>
-    </ul>
+    <h2>EJEMPLOS DE ERRORES COMUNES</h2>
 
-    <!-- EJEMPLOS -->
-    <h2>Ejemplos</h2>
-    <pre>
-# Buscar la palabra "error" en un archivo
-grep error archivo.txt
+    <p>Error: no usar comillas en textos con espacios</p>
+    <pre>grep texto largo archivo.txt</pre>
+    <p>Correcto:</p>
+    <pre>grep "texto largo" archivo.txt</pre>
 
-# Buscar sin distinguir mayúsculas/minúsculas
-grep -i error archivo.txt
-    </pre>
+    <p>Error: olvidar -i para ignorar mayúsculas</p>
+    <pre>grep "hola" archivo.txt</pre>
+    <p>Correcto:</p>
+    <pre>grep -i "hola" archivo.txt</pre>
 
-    <h2>Aportaciones de compañeros</h2>
+    <p>Error: usar mal comodines</p>
+    <pre>grep "texto" .txt</pre>
+    <p>Correcto:</p>
+    <pre>grep "texto" *.txt</pre>
 
-    <h3>Aron Estalayo</h3>
+    <hr>
+
+    <footer>
+        <h3>HECHO POR ARON</h3>
+    </footer>
 
 </body>
 </html>
